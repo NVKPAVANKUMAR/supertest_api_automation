@@ -21,12 +21,9 @@ describe("GET /airports/id", function () {
 
 describe("POST /airports/distance", function () {
   it("calculates the distance between two airports", async function () {
-    const response = await request
-      .post("/airports/distance")
-      .send({ from: "KIX", to: "SFO" });
+    const response = await request.post("/airports/distance").send({ from: "KIX", to: "SFO" });
 
     expect(response.status).to.eql(200);
-
     const attributes = response.body.data.attributes;
     expect(attributes).to.include.keys("kilometers", "miles", "nautical_miles");
     expect(attributes.kilometers).to.eql(8692.066508240026);
