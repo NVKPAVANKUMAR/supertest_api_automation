@@ -9,6 +9,16 @@ describe("GET /airports", function () {
   });
 });
 
+describe("GET /airports/id", function () {
+  it("returns the airport specified by the ID", async function () {
+    const response = await request.get("/airports/KIX");
+
+    expect(response.status).to.eql(200);
+    const attributes = response.body.data.attributes;
+    expect(attributes.name).to.eql("Kansai International Airport");
+    });
+});
+
 describe("POST /airports/distance", function () {
   it("calculates the distance between two airports", async function () {
     const response = await request
