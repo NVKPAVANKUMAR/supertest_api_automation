@@ -4,7 +4,7 @@
   "description": "airport gap api tests with mochawesome reporting",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter mochawesome"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "NVK PAVANKUMAR",
